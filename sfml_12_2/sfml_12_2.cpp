@@ -1,20 +1,29 @@
-﻿// sfml_12_2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <SFML/Graphics.hpp>
+using namespace sf;
+void circle(Shape& shape) {
+	shape.setPosition(shape.getPosition().x + 0.01, shape.getPosition().y + 0.01);
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	sf::RenderWindow window(sf::VideoMode(200, 200), "Lesson 2. kychka-pc.ru");
+	window.setFramerateLimit(30);
+	sf::CircleShape shape(100.f);
+	shape.setFillColor(sf::Color::Red);
+	int x = 0, y = 0;
+	while (window.isOpen())
+	{
+		sf::Event event;
+		if (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+		circle(shape);
+		window.clear();
+		window.draw(shape);
+		window.display();
+	}
+
+	return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
