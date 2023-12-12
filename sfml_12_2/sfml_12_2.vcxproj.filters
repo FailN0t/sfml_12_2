@@ -22,4 +22,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\font.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="res\circle.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
