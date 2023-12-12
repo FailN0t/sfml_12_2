@@ -45,18 +45,18 @@ int main()
 				shape.setPosition(shape.getPosition().x, 0);
 			}
 		}
-		//if (shape.getPosition().x + shape.getRadius()*2 >= window.getSize().x) {
-		//	shape2.setPosition(-(float)window.getSize().x + shape.getPosition().x, shape2.getPosition().y);
-		//	/*if (shape.getPosition().x  -399) {
-		//		shape.setPosition(0, shape.getPosition().y);
-		//	}*/
-		//}
-		//if (shape.getPosition().y + shape.getRadius() * 2 >= window.getSize().y) {
-		//	shape2.setPosition(shape2.getPosition().x, -(float)window.getSize().y + shape.getPosition().y /*- (2 * shape.getRadius())*/);
-		//	/*if (shape.getPosition().y < -399) {
-		//		shape.setPosition(shape.getPosition().x, 0);
-		//	}*/
-		//}
+		if (shape.getPosition().x + shape.getRadius()*2 >= window.getSize().x) {
+			shape2.setPosition(-(float)window.getSize().x + shape.getPosition().x, shape2.getPosition().y);
+			if (shape.getPosition().x  >= ) {
+				shape.setPosition(0, shape.getPosition().y);
+			}
+		}
+		if (shape.getPosition().y + shape.getRadius() * 2 >= window.getSize().y) {
+			shape2.setPosition(shape2.getPosition().x, -(float)window.getSize().y + shape.getPosition().y /*- (2 * shape.getRadius())*/);
+			/*if (shape.getPosition().y < -399) {
+				shape.setPosition(shape.getPosition().x, 0);
+			}*/
+		}
 		std::cout << shape.getPosition().y << std::endl;
 		circle(shape);
 		window.clear();
